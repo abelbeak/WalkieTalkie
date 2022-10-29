@@ -1,0 +1,13 @@
+node_modules
+__tests__
+.bundle
+android
+ios
+vendor
+.buckconfig
+.node-version
+.ruby-version
+Gemfile
+Gemfile.lock
+yarn.lock
+package-lock.json
