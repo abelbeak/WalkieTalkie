@@ -1,36 +1,44 @@
-import {Image, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import {Image, SafeAreaView, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import React from 'react';
+import {Stacks} from '../App';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
-const Login = () => {
+export type MovieScreenProps = NativeStackScreenProps<Stacks, 'Login'>;
+
+const Login = ({}: MovieScreenProps) => {
     return (
-        <View style={styles.container}>
-            <View style={styles.logo_wrapper}>
-                <Image style={styles.logo} source={require('../assets/login_logo.png')} />
+        <SafeAreaView style={{flex: 1}}>
+            <View style={styles.container}>
+                <View style={styles.logo_wrapper}>
+                    <Image style={styles.logo} source={require('../assets/login_logo.png')} />
+                </View>
+                <View style={styles.button_wrapper}>
+                    <TouchableHighlight
+                        style={[styles.kakao, styles.login_button]}
+                        activeOpacity={0.6}
+                        underlayColor="#DDDDDD"
+                        onPress={() => {}}>
+                        <Text style={styles.button_font}>카카오 로그인</Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={[styles.google, styles.login_button]}
+                        activeOpacity={0.6}
+                        underlayColor="#DDDDDD"
+                        onPress={() => {}}>
+                        <Text style={styles.button_font}>Google 계정으로 로그인</Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={[styles.apple, styles.login_button]}
+                        activeOpacity={0.6}
+                        underlayColor="#DDDDDD"
+                        onPress={() => {
+                            // navigation.navigate('Home');
+                        }}>
+                        <Text style={[styles.button_font, styles.apple_text]}>Apple로 로그인</Text>
+                    </TouchableHighlight>
+                </View>
             </View>
-            <View style={styles.button_wrapper}>
-                <TouchableHighlight
-                    style={[styles.kakao, styles.login_button]}
-                    activeOpacity={0.6}
-                    underlayColor="#DDDDDD"
-                    onPress={() => {}}>
-                    <Text style={styles.button_font}>카카오 로그인</Text>
-                </TouchableHighlight>
-                <TouchableHighlight
-                    style={[styles.google, styles.login_button]}
-                    activeOpacity={0.6}
-                    underlayColor="#DDDDDD"
-                    onPress={() => {}}>
-                    <Text style={styles.button_font}>Google 계정으로 로그인</Text>
-                </TouchableHighlight>
-                <TouchableHighlight
-                    style={[styles.apple, styles.login_button]}
-                    activeOpacity={0.6}
-                    underlayColor="#DDDDDD"
-                    onPress={() => {}}>
-                    <Text style={[styles.button_font, styles.apple_text]}>Apple로 로그인</Text>
-                </TouchableHighlight>
-            </View>
-        </View>
+        </SafeAreaView>
     );
 };
 
