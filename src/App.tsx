@@ -11,7 +11,7 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 
-import Login from './components/Login';
+import Login from './screens/Login';
 
 const App = () => {
     return (
